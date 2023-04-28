@@ -34,7 +34,7 @@ public class JacobMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
         animator.SetInteger("facing", facing);
 
-        if (movement.magnitude > 0 && idle) {
+        if (movement.magnitude > 0 && !idle) {
             //audioSource.clip = walkingSound;
             //audioSource.loop = true;
             //audioSource.Play();

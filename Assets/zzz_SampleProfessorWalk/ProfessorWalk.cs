@@ -21,16 +21,16 @@ public class ProfessorWalk : MonoBehaviour
 
         if(vertical > 0)  //up
         {
-            animator.SetInteger("direction", 2);
+            animator.SetInteger("direction", 3);
         } else if (vertical < 0)  //down
         {
-            animator.SetInteger("direction", 0);
+            animator.SetInteger("direction", 1);
         } else if (horizontal > 0)
         {
-            animator.SetInteger("direction", 3);
+            animator.SetInteger("direction", 2);
         } else if (horizontal < 0)
         {
-            animator.SetInteger("direction", 1);
+            animator.SetInteger("direction", 4);
         }
 
         
