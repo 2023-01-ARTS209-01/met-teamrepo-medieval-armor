@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    public Animator animator;
+    public Animator Animator;
     public AudioClip walkingSound;
 
     private AudioSource audioSource;
@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+       Animator.SetFloat("Horizontal", movement.x);
+        Animator.SetFloat("Vertical", movement.y);
+        Animator.SetFloat("Speed", movement.sqrMagnitude);
 
         if (movement.magnitude > 0 && !isWalking)
         {
