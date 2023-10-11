@@ -21,8 +21,8 @@ public class JacobMovement : MonoBehaviour
     }
 
     void Update() {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxis("Horizontal");
+        movement.y = Input.GetAxis("Vertical");
         if(movement.x > 0) {
             facing = 0;  //facing right
         } else if(movement.x < 0) {
@@ -33,8 +33,9 @@ public class JacobMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
         animator.SetInteger("facing", facing);
+	  animator.SetBool("idle", idle);
 
-        if (movement.magnitude > 0 && !idle) {
+        if (movement.magnitude > 0 && idle) {
             //audioSource.clip = walkingSound;
             //audioSource.loop = true;
             //audioSource.Play();
